@@ -31,37 +31,75 @@ namespace PostgreSqlCodeFirts
                 }
                 else
                 {
-                   
+
                 }
             }
         }
-
+        Formlar.FrmDepartmanlar frm;
+        Formlar.FrmPersoneller frm2;
+        Formlar.FrmPersonelIstatistik frm3;
+        Formlar.Gorevlistesi frm4;
+        Formlar.FrmGorevDetay frm5;
+        Formlar.AnaForm frm6;
         private void DepartmanList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.FrmDepartmanlar frm = new Formlar.FrmDepartmanlar();
-            frm.MdiParent = this;
-            frm.Show();
+            if (frm == null||frm.IsDisposed)
+            {
+                frm = new Formlar.FrmDepartmanlar();
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.FrmPersoneller frm = new Formlar.FrmPersoneller();
-            frm.MdiParent = this;
-            frm.Show();
+            if (frm2 == null||frm2.IsDisposed)
+            {
+                frm2 = new Formlar.FrmPersoneller();
+                frm2.MdiParent = this;
+                frm2.Show();
+
+            }
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.FrmPersonelIstatistik frm = new Formlar.FrmPersonelIstatistik();
-            frm.MdiParent = this;
-            frm.Show();
+            if (frm3 == null || frm3.IsDisposed)
+            {
+                frm3 = new Formlar.FrmPersonelIstatistik();
+                frm3.MdiParent = this;
+                frm3.Show();
+            }
+
         }
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.Gorevlistesi frm = new Formlar.Gorevlistesi();
-            frm.MdiParent = this;
-            frm.Show();
+            if (frm4 == null || frm4.IsDisposed)
+            {
+                frm4 = new Formlar.Gorevlistesi();
+                frm4.MdiParent = this;
+                frm4.Show();
+            }
+        }
+
+        private void GorevDetaybtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (frm5 == null || frm5.IsDisposed)
+            {
+                frm5 = new Formlar.FrmGorevDetay();
+                frm5.Show();
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (frm6 == null || frm5.IsDisposed)
+            {
+                frm6 = new Formlar.AnaForm();
+                frm6.MdiParent = this;
+                frm6.Show();
+            }
         }
     }
 }

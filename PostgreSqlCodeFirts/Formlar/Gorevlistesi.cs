@@ -29,11 +29,11 @@ namespace PostgreSqlCodeFirts.Formlar
             {
                 var gorevler = await GorevRepo.GetAllAsync();
                 gridControl1.DataSource = gorevler.OrderBy(d => d.Id).Select(o=>o.Aciklama).ToList();
-                chartControl1.Series["Series 1"].Points.AddPoint("Akdeniz", 10);
-                chartControl1.Series["Series 1"].Points.AddPoint("Karadeniz", 34);
-                chartControl1.Series["Series 1"].Points.AddPoint("Marmara", 50);
-                chartControl1.Series["Series 1"].Points.AddPoint("Güney Doğu Anadolu", 15);
-                chartControl1.Series["Series 1"].Points.AddPoint("İç Anadolu", 22);
+                int aktifgorev = gorevler.Count(d => d.Durum == "1");
+                int pasifgorev = gorevler.Count(d => d.Durum == "0");
+                chartControl1.Series["Durum"].Points.AddPoint("Aktif Görevler", aktifgorev);
+                chartControl1.Series["Durum"].Points.AddPoint("Pasif Görevler", pasifgorev);
+               
             }
         }
     }
