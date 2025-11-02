@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace PostgreSqlCodeFirts.Data
 {
-    public class Departman
+    public class GorevDetay
     {
-        [Key]   
+        [Key]
         public int Id { get; set; }
+        public int GorevId { get; set; }
+        public virtual Gorev Gorev { get; set; }
 
-        [Required]           
-        [StringLength(20)]
-        public string Ad { get; set; }
+        [StringLength(200)]
+        public string Aciklama { get; set; }
+        public DateTime Tarih { get; set; }
     }
 }

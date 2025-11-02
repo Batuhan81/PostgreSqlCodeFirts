@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace PostgreSqlCodeFirts.Data
 {
-    public class Departman
+    public class Admin
     {
-        [Key]   
+        [Key]
         public int Id { get; set; }
 
-        [Required]           
-        [StringLength(20)]
-        public string Ad { get; set; }
+        [StringLength(10)]
+        public string KullaniciAd { get; set; }
+
+        [StringLength(10)]
+        public string Sifre { get; set; }
     }
 }
