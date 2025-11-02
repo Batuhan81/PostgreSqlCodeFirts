@@ -12,7 +12,13 @@ namespace PostgreSqlCodeFirts.Classlarım
     public class GenericRepository<T>: IDisposable where T: class 
     {
         private readonly Context _db;
-        public GenericRepository() { _db = new Context(); }
+        private DbContextTransaction _transaction;
+
+        public GenericRepository()
+        {
+            _transaction?.Dispose();
+            _db = new Context();
+        }
 
         public void Dispose() { _db.Dispose(); }
 
@@ -75,6 +81,36 @@ namespace PostgreSqlCodeFirts.Classlarım
                 _db.Set<T>().Remove(entity);
                 await _db.SaveChangesAsync();
             }
+        }
+
+        // ---------------- Transaction Metodları ----------------
+
+        /// <summary>
+        /// Transaction başlatır
+        /// </summary>
+        public void BeginTransaction()
+        {
+            _transaction = _db.Database.BeginTransaction();
+        }
+
+        /// <summary>
+        /// Transaction’ı commit eder
+        /// </summary>
+        public void Commit()
+        {
+            _transaction?.Commit();
+            _transaction?.Dispose();
+            _transaction = null;
+        }
+
+        /// <summary>
+        /// Transaction’ı rollback eder
+        /// </summary>
+        public void Rollback()
+        {
+            _transaction?.Rollback();
+            _transaction?.Dispose();
+            _transaction = null;
         }
     }
 }

@@ -34,7 +34,7 @@
             this.Btnguncelle = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.BtnListele = new DevExpress.XtraEditors.SimpleButton();
             this.txtAd = new DevExpress.XtraEditors.TextEdit();
@@ -43,7 +43,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,13 +61,14 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.Btnguncelle);
             this.groupControl1.Controls.Add(this.btnSil);
             this.groupControl1.Controls.Add(this.btnEkle);
-            this.groupControl1.Controls.Add(this.textEdit1);
+            this.groupControl1.Controls.Add(this.txtId);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.BtnListele);
             this.groupControl1.Controls.Add(this.txtAd);
@@ -85,6 +86,7 @@
             this.Btnguncelle.Size = new System.Drawing.Size(196, 51);
             this.Btnguncelle.TabIndex = 7;
             this.Btnguncelle.Text = "Güncelle";
+            this.Btnguncelle.Click += new System.EventHandler(this.Btnguncelle_Click);
             // 
             // btnSil
             // 
@@ -94,6 +96,7 @@
             this.btnSil.Size = new System.Drawing.Size(196, 51);
             this.btnSil.TabIndex = 6;
             this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnEkle
             // 
@@ -103,13 +106,14 @@
             this.btnEkle.Size = new System.Drawing.Size(196, 51);
             this.btnEkle.TabIndex = 5;
             this.btnEkle.Text = "Ekle";
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
-            // textEdit1
+            // txtId
             // 
-            this.textEdit1.Location = new System.Drawing.Point(156, 71);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(196, 22);
-            this.textEdit1.TabIndex = 4;
+            this.txtId.Location = new System.Drawing.Point(156, 71);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(196, 22);
+            this.txtId.TabIndex = 4;
             // 
             // labelControl2
             // 
@@ -127,6 +131,7 @@
             this.BtnListele.Size = new System.Drawing.Size(196, 51);
             this.BtnListele.TabIndex = 2;
             this.BtnListele.Text = "Listele";
+            this.BtnListele.Click += new System.EventHandler(this.BtnListele_Click);
             // 
             // txtAd
             // 
@@ -152,12 +157,13 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmDepartmanlar";
             this.Text = "Departmanlar";
+            this.Load += new System.EventHandler(this.FrmDepartmanlar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -168,7 +174,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SimpleButton BtnListele;
         private DevExpress.XtraEditors.TextEdit txtAd;

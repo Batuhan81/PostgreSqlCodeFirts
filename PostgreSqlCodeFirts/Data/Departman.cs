@@ -15,5 +15,7 @@ namespace PostgreSqlCodeFirts.Data
         [Required]           
         [StringLength(20)]
         public string Ad { get; set; }
+
+        public bool Aktif { get; set; }
     }
 }

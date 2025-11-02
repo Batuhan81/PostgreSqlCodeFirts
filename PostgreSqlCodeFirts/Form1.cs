@@ -42,5 +42,26 @@ namespace PostgreSqlCodeFirts
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmPersoneller frm = new Formlar.FrmPersoneller();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmPersonelIstatistik frm = new Formlar.FrmPersonelIstatistik();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Gorevlistesi frm = new Formlar.Gorevlistesi();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

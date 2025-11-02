@@ -28,6 +28,8 @@ namespace PostgreSqlCodeFirts.Data
         [StringLength(100)]
         public string Gorsel { get; set; }
 
+        public bool Aktif { get; set; }
+
         //Froeign Key
         public int DepartmanId { get; set; }
         public virtual Departman Departman { get; set; }
