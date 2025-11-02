@@ -31,9 +31,16 @@ namespace PostgreSqlCodeFirts
                 }
                 else
                 {
-                    MessageBox.Show("Veritabanı zaten mevcut!");
+                   
                 }
             }
+        }
+
+        private void DepartmanList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmDepartmanlar frm = new Formlar.FrmDepartmanlar();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }
